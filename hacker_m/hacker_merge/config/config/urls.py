@@ -22,12 +22,12 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('common.urls')),
-    path('main', include('main.urls')),
-    path('serv', include('serv.urls')),
-    path('login', include('login.urls')),
+    path('main/', include('main.urls')),
+    path('serv/', include('serv.urls')),
+    path('login/', include('login.urls')),
     url(r'^chat/', include('chat.urls')),
-    path('maps', include('maps.urls')),
-    path('share', include('share.urls')),
+    path('maps/', include('maps.urls')),
+    path('share/', include('share.urls')),
     path('mypage/', include('mypage.urls')),
 
     # path('foodmap', include('foodmap.urls')),

@@ -1,3 +1,4 @@
-*.dbsqlite3
+*.sqlite3
 *.pyc
 
+.history/.gitignore_20210818173559

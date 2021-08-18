@@ -1,0 +1,27 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/page.css' %}">
+    <link rel="stylesheet" href="{% static 'main/main.css' %}">
+    <div class="content">
+        <div class="top">
+            <h1>당장 먹고싶은 음식을 찾아보세요!</h1>
+            <h1>'푸드세여'는 당신의 푸드메이트를 매칭해주는 배달음식 보조서비스 입니다.</h1>
+        </div>
+        <div class="bottom">
+            <img src="{% static 'main/deliver.png' %}" alt="">
+            <a href="{% url 'maps:index' %}"><button><h1>푸드맵 보기</h1></button></a>
+        </div>
+    </div> 
+{% endblock %}
+</body>
+</html>

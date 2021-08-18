@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>푸드셰어 - 음식 공유하기</title>
+	<link rel="stylesheet" href="maps/maps.css">
+    
+</head>
+<body>
+    {% block content %}
+	{% load static %}
+    <link rel="stylesheet" href="{% static 'share/share.css' %}">
+    <div id="login">
+        <div class="container">
+            <div id="login-row">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="" method="post">
+                            <h3 class="center-title">내 음식 공유하기</h3>
+                            <div class="form-group">
+                                <label for="username">제목</label>
+                                <input type="text" name="username" id="input1" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">공유할 음식</label>
+                                <input type="text" name="password" id="input2" class="form-control">
+                            </div>
+                            <div class="form-group2">
+                                <label for="password">모집인원</label>
+                                <input type="text" name="password" id="input3" class="form-control">
+                                &nbsp;&nbsp;
+                                
+                                <!-- <select name="account" class="select-arrow-image" >
+                                    <option value="nh">&nbspNH농협은행</option>
+                                    <option value="sin">&nbsp신한은행</option>
+                                    <option value="kb">&nbspKB국민은행</option>
+                                    <option value="hana">&nbsp하나은행</option>
+                                </select> -->
+                            </div>
+                            
+                        </form>
+                        <br><button type="submit">공유하기</button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

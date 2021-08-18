@@ -1,0 +1,8 @@
+.top{
+    margin-bottom: 70px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+}

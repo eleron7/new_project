@@ -1,0 +1,38 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+</head>
+
+<body>
+    {% block content %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/page.css' %}">
+    <link rel="stylesheet" href="{% static 'mypage/mypage.css' %}">
+    <div class="content">
+        <div class="card">
+            <h2 style="text-align:center; color:black;">User Profile Card</h2>
+            <img src="{% static 'mypage/profile.png' %}" alt="John" style="width:100%;">
+            <h1 style="color:black;">{{user.username}}</h1>
+            <p class="title">{{user.Bank}}</p>
+            <!-- <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+        </div> -->
+            <label>
+                <div id="edit_btn">
+                    <input type="button" id="edit_btn" value="Edit">
+                </div>
+            </label>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>

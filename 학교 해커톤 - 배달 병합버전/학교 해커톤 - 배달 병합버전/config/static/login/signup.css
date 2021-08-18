@@ -1,0 +1,46 @@
+.box{
+    width: 550px;
+    height: 550px;
+    background-color: #C12A35;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_img img{
+    width:60px
+}
+
+.input{
+    width: 250px;
+    height: 40px;
+}
+
+b{
+    color: white;
+}
+
+#login_btn{
+    width: 250px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #E89F24;
+    color: #D02833;
+}
+
+form{
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+}

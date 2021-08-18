@@ -1,0 +1,57 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #C12A35;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" style="color: white;"><img src = "{% static 'header/hamburger.png' %}" width="60"><img src = "{% static 'header/fried-chicken-2.png' %}" width="60"><img src = "{% static 'header/pizza-slice.png' %}" width="60"><h1>fooddshare.</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul id="ul" class="navbar-nav me-auto mb-2 mb-lg-0">
+          <link rel="stylesheet" href="{% static 'header/header.css' %}">
+          <li class="nav-item">
+            <a aria-current="page" href="{% url 'main:index' %}"><h4>메인</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'serv:index' %}"><h4>서비스</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'maps:index' %}"><h4>푸드맵</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'share:index' %}"><h4>음식공유</h4></a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a href="{% url 'login:logout' %}"><h4>로그아웃</h4></a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'mypage:index' %}"><h4>mypage</h4></a>
+          </li>
+          <li class="nav-item" >
+            <p style="color:white;">{{user.username}}님 반갑습니다.</p>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a href="{% url 'login:index' %}"><h4>로그인</h4></a>
+          </li>
+          {% endif %}
+
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                <h4>내 위치 설정</h4>   
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">직접입력</a></li>
+              <li><a class="dropdown-item" href="#">1</a></li>
+              <li><a class="dropdown-item" href="#">2</a></li>
+            </ul>
+          </li> -->
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>

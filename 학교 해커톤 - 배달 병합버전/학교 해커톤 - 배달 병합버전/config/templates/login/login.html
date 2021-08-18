@@ -1,0 +1,63 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main</title>
+</head>
+<body>
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/page.css' %}">
+    <link rel="stylesheet" href="{% static 'login/login.css' %}">
+    <div class="content">
+        <div class="box">
+            <form action="{% url 'login:login' %}" method="POST">
+            {% csrf_token %}
+                <div class="logo">
+                    <div class="logo_img">
+                        <img src = "{% static 'header/hamburger.png' %}">
+                        <img src = "{% static 'header/fried-chicken-2.png' %}">
+                        <img src = "{% static 'header/pizza-slice.png' %}">
+                    </div>
+                    <div class="logo_tit">
+                        <h1>fooddshare.</h1>
+                    </div>
+                </div>
+                <br>
+                <input class="id" type="text" name="username" placeholder="아이디">
+                <br>
+                <br>
+                <input class="pw"type="password" name="password" placeholder="비밀번호">
+                <!-- <br>
+                <br> -->
+                <!-- <label>
+                    <input type="checkbox" name="id_save" value="idid">
+                    <b>아이디저장</b>
+                </label>
+                <label>
+                    <input type="checkbox" name="autologin" value="autologin"">
+                    <b>자동로그인</b>
+                </label> -->
+                <br>
+                <br>
+                <label>
+                    <div class="login_btn"> 
+                        <input type="submit" id="login_btn" value="로그인">
+                    </div>
+                </label>
+                <br>
+                <br>
+                <label>
+                    <div class="login_btn"> 
+                        <a href="{% url 'login:signuppage' %}"><input type="button" id="login_btn" value="회원가입"></a>
+                    </div>
+                </label>                
+            </form>
+        </div>
+    </div> 
+{% endblock %}
+</body>
+</html>

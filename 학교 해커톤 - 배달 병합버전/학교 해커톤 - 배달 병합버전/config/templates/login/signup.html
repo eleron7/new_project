@@ -1,0 +1,82 @@
+{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+
+<body>
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'common/page.css' %}">
+    <link rel="stylesheet" href="{% static 'login/signup.css' %}">
+    <!--form태그 POST방식으로 쓸꺼면 보안을 위해서 csrf_token을 써주는게 좋다-->
+    <!--회원가입과 같은 정보를 처리할때는 POST 방식으로 처리해줘야한다.-->
+    <div class="content">
+        <div class="box">
+            <h1>Sign up!</h1>
+            <form method="POST" action="{% url 'login:signup' %}">
+                {% csrf_token %}
+                <!--보안을 위해서 써주는 난수 발생기, csrf 방해를 방어해주는 것.-->
+                Id
+                <br>
+                <input class="input" name="username" type="text" value="">
+                <br>
+                Password
+                <br>
+                <input class="input" name="password1" type="password" value="">
+                <br>
+                Confirm Password
+                <br>
+                <input class="input" name="password2" type="password" value="">
+                <br>
+                Bank
+                <br>
+                <select name="Bank" class="input">
+                    <option value="">은행선택</option>
+                    <option value="kakao">카카오뱅크</option>
+                    <option value="ouri">우리은행</option>
+                    <option value="kb">국민은행</option>
+                    <option value="sinhan">신한은행</option>
+                    <option value="hana">하나은행</option>
+                    <option value="ibk">기업은행</option>
+                    <option value="sc">SC제일은행</option>
+                    <option value="city">씨티은행</option>
+                    <option value="kbank">케이은행</option>
+                    <option value="nh">농협은행</option>
+                    <option value="post">우체국</option>
+                    <option value="suhyup">수협은행</option>
+                    <option value="sanup">산업은행</option>
+                    <option value="bnk">부산은행</option>
+                    <option value="dgb">대구은행</option>
+                    <option value="gyeongnam">경남은행</option>
+                    <option value="gwangju">광주은행</option>
+                    <option value="jeonbuk">전북은행</option>
+                    <option value="jeju">제주은행</option>
+                </select>
+                <br>
+                Account Number
+                <br>
+                <input class="input" name="account_number" type="text" value="">
+                <br>
+                Phone Number
+                <br>
+                <input class="input" name="phone" type="text" value="">
+                <br>
+                <br>
+                <label>
+                    <div class="login_btn">
+                        <input type="submit" id="login_btn" value="sign up">
+                    </div>
+                </label>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
